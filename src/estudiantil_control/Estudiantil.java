@@ -1,5 +1,6 @@
-package estudiantil;
+package estudiantil_control;
 
+import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -17,8 +18,12 @@ public class Estudiantil {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-            System.out.println("Error en el Skin");
+            System.out.println("Error en el LookAndFeel: " + e.getMessage());
         }
+        principal principal = new principal();
+        principal.setLocationRelativeTo(null);
+        principal.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        principal.show();
     }
 
 }
